@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 로그인 화면의 한글 문구가 깨지지 않도록 UTF-8 인코딩을 지정합니다. -->
+    <meta charset="UTF-8">
+    <!-- 브라우저 탭에 표시되는 로그인 페이지 제목입니다. -->
+    <title>SportStream - 로그인</title>
+    <!-- 로그인 페이지 전용 스타일 파일입니다. -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- 상단 헤더: 로고와 페이지 이동 메뉴입니다. -->
+    <header>
+        <div class="container">
+            <!-- 서비스 로고입니다. span 태그 부분은 CSS로 색상을 다르게 표현합니다. -->
+            <h1 class="logo">Sport<span>Stream</span></h1>
+            <!-- 각 HTML 페이지로 이동하는 내비게이션 메뉴입니다. -->
+            <nav>
+                <ul>
+                    <li><a href="home.html">홈</a></li>
+                    <li><a href="schedule.html">경기일정</a></li>
+                    <li><a href="results.html">경기결과</a></li>
+                    <li><a href="broadcast.html">중계보기</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠: 로그인 입력 폼을 가운데에 배치합니다. -->
+    <main class="container">
+        <!-- 로그인 박스: 제목, 안내 문구, 입력창, 버튼, 회원가입 링크를 포함합니다. -->
+        <div class="login-box">
+            <h2>로그인</h2>
+            <p>아이디와 비밀번호를 입력하세요.</p>
+            <!-- 현재는 화면용 기본 폼이며, 서버 전송 기능은 따로 연결되어 있지 않습니다. -->
+            <form>
+                <!-- 사용자 아이디를 입력하는 칸입니다. -->
+                <input type="text" placeholder="아이디">
+                <!-- 비밀번호 입력 칸입니다. type=password라 입력한 글자가 가려집니다. -->
+                <input type="password" placeholder="비밀번호">
+                <button type="submit" class="btn">로그인</button>
+            </form>
+            <!-- 회원가입 페이지가 생기면 href 값을 실제 주소로 바꾸면 됩니다. -->
+            <div class="join-link">
+                <a href="#">회원가입</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 하단 푸터: 사이트 저작권 정보를 표시합니다. -->
+    <footer>
+        <p>&copy; 2026 SportStream</p>
+    </footer>
+</body>
+</html>

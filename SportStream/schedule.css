@@ -1,0 +1,95 @@
+﻿/* 브라우저 기본 여백을 제거해 일정표가 원하는 위치에서 시작하도록 합니다. */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 경기일정 페이지 전체의 배경색, 글자색, 기본 글꼴입니다. */
+body {
+    background-color: #0f0f1b;
+    color: #e0e0e0;
+    font-family: "Malgun Gothic", sans-serif;
+    padding-bottom: 90px;
+}
+
+/* 콘텐츠 영역을 1000px 너비로 고정하고 중앙 정렬합니다. */
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 상단 헤더입니다. 로고와 메뉴를 담는 공통 영역입니다. */
+header {
+    background-color: #16213e;
+    height: 80px;
+    border-bottom: 3px solid #e94560;
+}
+
+/* 로고를 왼쪽에 배치하고 헤더 높이에 맞춥니다. */
+.logo {
+    float: left;
+    font-size: 30px;
+    line-height: 80px;
+    font-weight: bold;
+}
+
+/* 로고의 Stream 부분을 빨간색으로 강조합니다. */
+.logo span {
+    color: #e94560;
+}
+
+/* 메뉴를 오른쪽으로 정렬합니다. */
+nav {
+    float: right;
+}
+
+/* 메뉴 항목을 한 줄로 배치하고 간격을 줍니다. */
+nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+    line-height: 80px;
+}
+
+/* 메뉴 링크의 기본 밑줄을 없애고 흰색으로 표시합니다. */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 페이지 제목이 헤더와 붙지 않도록 위쪽 여백을 줍니다. */
+.page-title {
+    margin-top: 30px;
+}
+
+/* 경기 일정 표입니다. 전체 너비를 사용하고 셀 경계가 깔끔하게 보이도록 설정합니다. */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+/* 표의 모든 셀에 여백과 아래쪽 구분선을 적용합니다. */
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid #334155;
+    text-align: center;
+}
+
+/* 표 제목 행은 배경색과 글자색을 다르게 해서 데이터 행과 구분합니다. */
+th {
+    background-color: #0f172a;
+    color: #e94560;
+}
+
+/* 페이지 하단 푸터입니다. 경기일정 페이지에서는 화면 맨 아래에 고정합니다. */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #16213e;
+    padding: 30px;
+    text-align: center;
+    box-sizing: border-box;
+}

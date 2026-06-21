@@ -1,0 +1,101 @@
+﻿/* 모든 요소의 기본 여백을 제거해 표와 헤더 위치를 일정하게 만듭니다. */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 경기결과 페이지의 전체 배경색, 글자색, 기본 글꼴입니다. */
+body {
+    background-color: #0f0f1b;
+    color: #e0e0e0;
+    font-family: "Malgun Gothic", sans-serif;
+    padding-bottom: 90px;
+}
+
+/* 콘텐츠를 1000px 너비로 제한하고 화면 중앙에 배치합니다. */
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 상단 헤더입니다. 공통 메뉴 영역으로 사용합니다. */
+header {
+    background-color: #16213e;
+    height: 80px;
+    border-bottom: 3px solid #e94560;
+}
+
+/* 로고를 헤더 왼쪽에 배치합니다. */
+.logo {
+    float: left;
+    font-size: 30px;
+    line-height: 80px;
+    font-weight: bold;
+}
+
+/* 로고의 Stream 부분을 포인트 색상으로 표시합니다. */
+.logo span {
+    color: #e94560;
+}
+
+/* 메뉴를 헤더 오른쪽에 배치합니다. */
+nav {
+    float: right;
+}
+
+/* 메뉴 항목을 가로로 배치합니다. */
+nav ul li {
+    display: inline-block;
+    margin-left: 30px;
+    line-height: 80px;
+}
+
+/* 메뉴 링크의 밑줄을 없애고 흰색으로 표시합니다. */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 페이지 제목과 헤더 사이에 여백을 줍니다. */
+.page-title {
+    margin-top: 30px;
+}
+
+/* 경기 결과 표입니다. 컨테이너 전체 너비를 사용하고 셀 테두리를 겹치게 정리합니다. */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+/* 표의 제목 셀과 내용 셀에 공통 여백, 아래쪽 선, 가운데 정렬을 적용합니다. */
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid #334155;
+    text-align: center;
+}
+
+/* 표 제목 행은 어두운 배경과 포인트 색상 글자로 구분합니다. */
+th {
+    background-color: #0f172a;
+    color: #e94560;
+}
+
+/* 스코어는 중요한 정보이므로 빨간색과 굵은 글씨로 강조합니다. */
+.score {
+    color: #e94560;
+    font-weight: bold;
+}
+
+/* 하단 푸터입니다. 경기결과 페이지에서는 화면 맨 아래에 고정합니다. */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #16213e;
+    padding: 30px;
+    text-align: center;
+    box-sizing: border-box;
+}
