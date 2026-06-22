@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <!-- 로그인 화면의 한글 문구가 깨지지 않도록 UTF-8 인코딩을 지정합니다. -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 브라우저 탭에 표시되는 로그인 페이지 제목입니다. -->
     <title>SportStream - 로그인</title>
     <!-- 로그인 페이지 전용 스타일 파일입니다. -->
@@ -21,7 +22,8 @@
                     <li><a href="schedule.html">경기일정</a></li>
                     <li><a href="results.html">경기결과</a></li>
                     <li><a href="broadcast.html">중계보기</a></li>
-                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="login.html" class="active">로그인</a></li>
+                    <li><button id="theme-toggle" class="theme-btn" aria-label="테마 전환">🌙</button></li>
                 </ul>
             </nav>
         </div>
@@ -36,21 +38,41 @@
             <!-- 현재는 화면용 기본 폼이며, 서버 전송 기능은 따로 연결되어 있지 않습니다. -->
             <form>
                 <!-- 사용자 아이디를 입력하는 칸입니다. -->
-                <input type="text" placeholder="아이디">
+                <input type="text" placeholder="아이디" required>
                 <!-- 비밀번호 입력 칸입니다. type=password라 입력한 글자가 가려집니다. -->
-                <input type="password" placeholder="비밀번호">
+                <input type="password" placeholder="비밀번호" required>
                 <button type="submit" class="btn">로그인</button>
             </form>
-            <!-- 회원가입 페이지가 생기면 href 값을 실제 주소로 바꾸면 됩니다. -->
+            <!-- 회원가입 페이지 이동 링크입니다. -->
             <div class="join-link">
-                <a href="#">회원가입</a>
+                <a href="join.html">회원가입</a>
             </div>
         </div>
     </main>
 
     <!-- 하단 푸터: 사이트 저작권 정보를 표시합니다. -->
     <footer>
-        <p>&copy; 2026 SportStream</p>
+        <p>&copy; 2026 SportStream. All rights reserved.</p>
     </footer>
+
+    <!-- 테마 제어 스크립트 -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateToggleIcon(currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateToggleIcon(theme);
+        });
+        
+        function updateToggleIcon(theme) {
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+    </script>
 </body>
 </html>

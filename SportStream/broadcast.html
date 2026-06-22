@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <!-- 한글 중계 정보가 깨지지 않도록 UTF-8 인코딩을 사용합니다. -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 브라우저 탭에 표시되는 중계보기 페이지 제목입니다. -->
     <title>SportStream - 중계보기</title>
     <!-- 중계보기 페이지 전용 스타일 파일입니다. -->
@@ -20,8 +21,9 @@
                     <li><a href="home.html">홈</a></li>
                     <li><a href="schedule.html">경기일정</a></li>
                     <li><a href="results.html">경기결과</a></li>
-                    <li><a href="broadcast.html">중계보기</a></li>
+                    <li><a href="broadcast.html" class="active">중계보기</a></li>
                     <li><a href="login.html">로그인</a></li>
+                    <li><button id="theme-toggle" class="theme-btn" aria-label="테마 전환">🌙</button></li>
                 </ul>
             </nav>
         </div>
@@ -47,7 +49,27 @@
 
     <!-- 하단 푸터: 사이트 저작권 정보를 표시합니다. -->
     <footer>
-        <p>&copy; 2026 SportStream</p>
+        <p>&copy; 2026 SportStream. All rights reserved.</p>
     </footer>
+
+    <!-- 테마 제어 스크립트 -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateToggleIcon(currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateToggleIcon(theme);
+        });
+        
+        function updateToggleIcon(theme) {
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+    </script>
 </body>
 </html>

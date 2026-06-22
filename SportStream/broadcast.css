@@ -1,14 +1,37 @@
-﻿/* 모든 요소의 기본 여백을 제거해 페이지 시작 위치를 일정하게 만듭니다. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+:root {
+    --color-primary: #1D4ED8;      /* 스포츠 블루 (내비게이션 바, 주요 버튼, 활성 탭) */
+    --color-secondary-1: #0F172A;  /* 다크 네이비 (전체 배경, 카드 배경) */
+    --color-secondary-2: #334155;  /* 미드 그레이 (카드 내부 배경, 비활성 UI 요소) */
+    --color-accent: #EF4444;       /* 라이브 레드 (LIVE 배지, 알림 아이콘) */
+    --color-text-main: #FFFFFF;    /* 화이트 (본문 텍스트) */
+    --color-text-sub: #E2E8F0;     /* 슬레이트 (보조 텍스트) */
+}
+
+[data-theme="light"] {
+    --color-primary: #1D4ED8;      /* 스포츠 블루 */
+    --color-secondary-1: #F8FAFC;  /* 밝은 그레이/화이트 전체 배경 */
+    --color-secondary-2: #E2E8F0;  /* 밝은 슬레이트 카드 배경 */
+    --color-accent: #EF4444;       /* 라이브 레드 */
+    --color-text-main: #0F172A;    /* 다크 네이비 텍스트 */
+    --color-text-sub: #475569;     /* 슬레이트 보조 텍스트 */
+}
+
+/* 모든 요소의 기본 여백을 제거해 페이지 시작 위치를 일정하게 만듭니다. */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* 중계보기 페이지 전체 배경색, 글자색, 기본 글꼴입니다. */
 body {
-    background-color: #0f0f1b;
-    color: #e0e0e0;
-    font-family: "Malgun Gothic", sans-serif;
+    background-color: var(--color-secondary-1);
+    color: var(--color-text-main);
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    font-size: 15px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 /* 콘텐츠 영역을 1000px 너비로 제한하고 가운데 정렬합니다. */
@@ -17,24 +40,24 @@ body {
     margin: 0 auto;
 }
 
-/* 상단 헤더 영역입니다. 메뉴와 본문을 구분하기 위해 하단에 포인트 선을 둡니다. */
+/* 상단 헤더 영역입니다. */
 header {
-    background-color: #16213e;
-    height: 80px;
-    border-bottom: 3px solid #e94560;
+    background-color: var(--color-primary);
+    height: 60px;
+    transition: background-color 0.2s ease;
 }
 
 /* 로고를 왼쪽에 배치하고 헤더 높이에 맞춰 세로 중앙 정렬합니다. */
 .logo {
     float: left;
-    font-size: 30px;
-    line-height: 80px;
-    font-weight: bold;
+    font-size: 28px;
+    line-height: 60px;
+    font-weight: 700;
 }
 
-/* 로고의 Stream 부분만 빨간색으로 강조합니다. */
+/* 로고의 Stream 부분만 포인트 색상으로 강조합니다. */
 .logo span {
-    color: #e94560;
+    color: var(--color-accent);
 }
 
 /* 메뉴를 헤더 오른쪽으로 이동시킵니다. */
@@ -43,30 +66,63 @@ nav {
 }
 
 /* 메뉴 항목들을 한 줄로 배치하고 항목 간 간격을 줍니다. */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
 nav ul li {
-    display: inline-block;
     margin-left: 30px;
-    line-height: 80px;
+    line-height: 60px;
 }
 
 /* 메뉴 링크의 기본 밑줄을 없애고 흰색으로 표시합니다. */
 nav ul li a {
-    color: white;
+    color: var(--color-text-sub);
     text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--color-text-main);
+    font-weight: 700;
+}
+
+/* 테마 토글 버튼 스타일 */
+.theme-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-main);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 60px;
+    transition: transform 0.2s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
 }
 
 /* 페이지 제목의 위쪽 여백입니다. 헤더와 제목이 붙어 보이지 않게 합니다. */
 .page-title {
-    margin-top: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 16px;
 }
 
 /* 영상 플레이어를 감싸는 박스입니다. 영상 로딩 전에도 검은 영역이 유지됩니다. */
 .player-wrap {
     width: 100%;
     height: 500px;
-    background-color: black;
-    margin-top: 20px;
-    border-radius: 10px;
+    background-color: #000000;
+    margin-top: 16px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 /* iframe 영상을 플레이어 박스 크기에 맞춥니다. */
@@ -77,37 +133,62 @@ nav ul li a {
 
 /* 경기 정보 박스입니다. 영상 아래에 현재 중계 정보를 모아 보여줍니다. */
 .broadcast-info {
-    margin-top: 20px;
-    background-color: #16213e;
-    padding: 20px;
-    border-radius: 10px;
+    margin-top: 16px;
+    background-color: var(--color-secondary-2);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--color-secondary-2);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* 경기 제목을 포인트 색상으로 강조합니다. */
+/* 경기 제목을 표시합니다. */
 .broadcast-info h3 {
-    color: #e94560;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 8px;
+}
+
+/* 시청자 수 등의 안내 텍스트입니다. */
+.broadcast-info p {
+    font-size: 15px;
+    color: var(--color-text-sub);
 }
 
 /* 경기 정보 박스 안의 버튼이 본문과 붙지 않도록 위쪽 여백을 줍니다. */
 .broadcast-info .btn {
-    margin-top: 15px;
+    margin-top: 16px;
 }
 
 /* 중계보기 페이지에서 사용하는 버튼 스타일입니다. */
 .btn {
-    background-color: #e94560;
-    color: white;
-    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    padding: 12px 24px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #1e40af;
+    transform: translateY(-2px);
 }
 
 /* 하단 푸터입니다. 페이지 내용을 모두 본 뒤 아래쪽에서 보이도록 배치합니다. */
 footer {
     clear: both;
-    background-color: #16213e;
-    padding: 30px;
+    background-color: var(--color-secondary-1);
+    border-top: 1px solid var(--color-secondary-2);
+    padding: 24px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 32px;
+}
+
+footer p {
+    font-size: 13px;
+    color: var(--color-text-sub);
 }
