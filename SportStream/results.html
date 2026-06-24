@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 경기 결과의 한글 정보가 깨지지 않도록 UTF-8 인코딩을 사용합니다. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 브라우저 탭에 표시되는 경기결과 페이지 제목입니다. -->
+    <title>SportStream - 경기결과</title>
+    <!-- 경기결과 페이지 전용 스타일 파일입니다. -->
+    <link rel="stylesheet" href="results.css">
+</head>
+<body>
+    <!-- 상단 헤더: 로고와 전체 페이지 이동 메뉴입니다. -->
+    <header>
+        <div class="container">
+            <!-- 사이트 로고입니다. Stream 부분은 CSS에서 강조 색상으로 표시합니다. -->
+            <h1 class="logo">Sport<span>Stream</span></h1>
+            <!-- 주요 페이지로 이동하는 메뉴 목록입니다. -->
+            <nav>
+                <ul>
+                    <li><a href="home.html">홈</a></li>
+                    <li><a href="schedule.html">경기일정</a></li>
+                    <li><a href="results.html" class="active">경기결과</a></li>
+                    <li><a href="broadcast.html">중계보기</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li><button id="theme-toggle" class="theme-btn" aria-label="테마 전환">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 메인 콘텐츠: 최근 경기 결과를 표 형태로 보여줍니다. -->
+    <main class="container">
+        <!-- 페이지 제목입니다. page-title 클래스가 위쪽 여백을 담당합니다. -->
+        <h2 class="page-title">경기 결과</h2>
+        <!-- 경기 결과 표: 날짜, 종목, 경기 매치, 스코어 순서로 정보를 정리합니다. -->
+        <table>
+            <thead>
+                <!-- 표 제목 행입니다. 각 열의 의미를 설명합니다. -->
+                <tr>
+                    <th>날짜</th>
+                    <th>종목</th>
+                    <th>경기 매치</th>
+                    <th>스코어</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 첫 번째 경기 결과입니다. -->
+                <tr>
+                    <td>06.12</td>
+                    <td>축구</td>
+                    <td>한국 vs 체코</td>
+                    <td class="score">2 : 1</td>
+                </tr>
+                <!-- 두 번째 경기 결과입니다. -->
+                <tr>
+                    <td>06.12</td>
+                    <td>야구</td>
+                    <td>기아 vs 삼성</td>
+                    <td class="score">17 : 4</td>
+                </tr>
+                <!-- 세 번째 경기 결과입니다. -->
+                <tr>
+                    <td>06.13</td>
+                    <td>농구</td>
+                    <td>서울 SK vs 안양 정관장</td>
+                    <td class="score">88 : 82</td>
+                </tr>
+                <!-- 네 번째 경기 결과입니다. -->
+                <tr>
+                    <td>06.13</td>
+                    <td>배구</td>
+                    <td>대한항공 vs 우리카드</td>
+                    <td class="score">3 : 2</td>
+                </tr>
+                <!-- 다섯 번째 경기 결과입니다. -->
+                <tr>
+                    <td>06.14</td>
+                    <td>F1</td>
+                    <td>캐나다 그랑프리</td>
+                    <td class="score">1위 베르스타펜</td>
+                </tr>
+                <!-- 여섯 번째 경기 결과입니다. -->
+                <tr>
+                    <td>06.14</td>
+                    <td>축구</td>
+                    <td>프랑스 vs 독일</td>
+                    <td class="score">1 : 1</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- 하단 푸터: 사이트 저작권 정보를 표시합니다. -->
+    <footer>
+        <p>&copy; 2026 SportStream. All rights reserved.</p>
+    </footer>
+
+    <!-- 테마 제어 스크립트 -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateToggleIcon(currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateToggleIcon(theme);
+        });
+        
+        function updateToggleIcon(theme) {
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+    </script>
+</body>
+</html>
