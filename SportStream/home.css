@@ -162,7 +162,6 @@ nav ul li a.active {
     transform: translateY(-2px);
 }
 
-/* 최신 하이라이트 전체 영역입니다. 배너와 일정한 간격을 둡니다. */
 .video-list {
     margin-top: 16px;
     clear: both;
