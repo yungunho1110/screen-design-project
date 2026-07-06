@@ -178,7 +178,6 @@ nav ul li a.active {
     margin-bottom: 4px;
 }
 
-/* 섹션 설명은 보조 텍스트 크기(13px)에 맞춥니다. */
 .section-title p {
     color: var(--color-text-sub);
     font-size: 13px;
