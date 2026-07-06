@@ -183,7 +183,6 @@ nav ul li a.active {
     font-size: 13px;
 }
 
-/* 하이라이트 카드입니다. 3개 카드의 높이를 같게 고정해서 모양과 공백을 맞춥니다. */
 .video-card {
     width: 322px;
     height: 420px;
