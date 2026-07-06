@@ -55,7 +55,7 @@ header {
     font-weight: 700;
 }
 
-/* 로고 안의 Stream 글자만 포인트 색상으로 강조합니다. */
+/* 로고 안의 Stream 글자만 포인트 색상 강조 */
 .logo span {
     color: var(--color-accent);
 }
@@ -92,7 +92,6 @@ nav ul li a.active {
     font-weight: 700;
 }
 
-/* 테마 토글 버튼 스타일 */
 .theme-btn {
     background: none;
     border: none;
