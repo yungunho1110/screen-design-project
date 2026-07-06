@@ -136,7 +136,7 @@ nav ul li a.active {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 8px;
-    color: #FFFFFF; /* 히어로 텍스트는 항상 밝게 유지 */
+    color: #FFFFFF; 
 }
 
 .hero-text p {
@@ -145,7 +145,6 @@ nav ul li a.active {
     margin-bottom: 16px;
 }
 
-/* 사이트에서 공통으로 쓰는 버튼 스타일입니다. */
 .btn {
     background-color: var(--color-primary);
     color: #FFFFFF;
