@@ -107,7 +107,7 @@ nav ul li a.active {
     transform: scale(1.1);
 }
 
-/* 메인 배너 영역입니다. 헤더 아래에 여백을 두고, 안쪽 텍스트를 absolute로 올릴 수 있게 relative를 사용합니다. */
+/* 메인 배너 영역입니다.  */
 .hero {
     margin-top: 16px;
     position: relative;
