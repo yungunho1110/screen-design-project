@@ -218,7 +218,6 @@ nav ul li a.active {
     position: relative;
 }
 
-/* 종목 이름을 작은 강조 라벨 형태로 보여줍니다. */
 .sport-tag {
     display: inline-block;
     background-color: var(--color-accent);
