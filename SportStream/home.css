@@ -211,7 +211,7 @@ nav ul li a.active {
     object-fit: cover;
 }
 
-/* 카드 내부 텍스트 영역입니다. 링크를 아래쪽에 고정하기 위해 relative를 사용합니다. */
+
 .video-info {
     height: 240px;
     padding: 16px;
