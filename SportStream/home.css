@@ -237,7 +237,6 @@ nav ul li a.active {
     min-height: 45px;
 }
 
-/* 카드 설명 문구입니다. */
 .video-info p {
     color: var(--color-text-sub);
     font-size: 13px;
