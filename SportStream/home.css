@@ -245,7 +245,6 @@ nav ul li a.active {
     min-height: 63px;
 }
 
-/* 하이라이트 보기 링크입니다. 카드 아래쪽 같은 위치에 고정합니다. */
 .watch-link {
     position: absolute;
     left: 16px;
