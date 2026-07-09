@@ -260,7 +260,6 @@ nav ul li a.active {
     color: #dc2626;
 }
 
-/* 하단 푸터입니다. 페이지 내용을 모두 본 뒤 아래쪽에서 보이도록 배치합니다. */
 footer {
     clear: both;
     background-color: var(--color-secondary-1);
