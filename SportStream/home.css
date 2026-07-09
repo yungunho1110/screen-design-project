@@ -229,9 +229,8 @@ nav ul li a.active {
     margin-bottom: 8px;
 }
 
-/* 카드 제목입니다. */
 .video-info h4 {
-    font-size: 15px; /* 본문 폰트보다 약간 강조, 16px */
+    font-size: 15px; 
     font-weight: 700;
     margin-bottom: 8px;
     line-height: 1.4;
